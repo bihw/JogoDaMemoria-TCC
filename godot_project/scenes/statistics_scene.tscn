@@ -1,0 +1,192 @@
+[gd_scene load_steps=9 format=3 uid="uid://bqnoxclylclek"]
+
+[ext_resource type="Script" path="res://scripts/statistics_scene.gd" id="1_s1p4q"]
+[ext_resource type="Texture2D" uid="uid://jemud4nm0tgo" path="res://assets/game_background.png" id="1_sqbqy"]
+[ext_resource type="Texture2D" uid="uid://d0cugosjpesnv" path="res://assets/back_icon.png" id="2_hnpqu"]
+[ext_resource type="Texture2D" uid="uid://dhly8n6j0leud" path="res://assets/board_bigger.png" id="3_ulpf3"]
+[ext_resource type="FontFile" uid="uid://cc8qug66mfmt3" path="res://fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-ExtraBold.ttf" id="4_1jydn"]
+[ext_resource type="Texture2D" uid="uid://dg78oapux5aof" path="res://assets/back_icon_pressed.png" id="4_bo88c"]
+[ext_resource type="FontFile" uid="uid://d0hx6os8rjseg" path="res://fonts/AfacadFlux/static/AfacadFlux-Bold.ttf" id="5_dnvmg"]
+[ext_resource type="Theme" uid="uid://cvdxtujy0tn6o" path="res://resources/buttons_start.tres" id="6_a4mly"]
+
+[node name="StatisticsScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s1p4q")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_sqbqy")
+expand_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.0627451)
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -417.5
+offset_top = -269.0
+offset_right = 417.5
+offset_bottom = 269.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ulpf3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LabelNenhuma" type="Label" parent="TextureRect/ColorRect/TextureRect"]
+visible = false
+layout_mode = 1
+offset_left = 86.0
+offset_top = 76.0
+offset_right = 458.0
+offset_bottom = 104.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_1jydn")
+theme_override_font_sizes/font_size = 19
+text = "Nenhuma estatística por enquanto."
+
+[node name="Label" type="Label" parent="TextureRect/ColorRect/TextureRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -324.5
+offset_top = -140.0
+offset_right = 297.5
+offset_bottom = -112.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_1jydn")
+theme_override_font_sizes/font_size = 19
+text = "Para estísticas antigas dirija-se ao seu armazenamento interno: "
+
+[node name="Label2" type="Label" parent="TextureRect/ColorRect/TextureRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -287.5
+offset_top = -98.0
+offset_right = 287.5
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("5_dnvmg")
+theme_override_font_sizes/font_size = 22
+text = "Documents/Jogo da Memória/dados.csv"
+horizontal_alignment = 1
+
+[node name="LabelTitulo" type="Label" parent="TextureRect/ColorRect/TextureRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -324.5
+offset_top = 51.0
+offset_right = 343.5
+offset_bottom = 79.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_1jydn")
+theme_override_font_sizes/font_size = 19
+text = "Prévia das últimas estatísticas"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="LabelE1" type="Label" parent="TextureRect/ColorRect/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -324.5
+offset_top = -189.0
+offset_right = 343.5
+offset_bottom = -107.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_1jydn")
+theme_override_font_sizes/font_size = 19
+
+[node name="LabelE2" type="Label" parent="TextureRect/ColorRect/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -324.5
+offset_top = -94.0
+offset_right = 342.5
+offset_bottom = 199.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_1jydn")
+theme_override_font_sizes/font_size = 19
+
+[node name="Button" type="Button" parent="TextureRect/ColorRect/TextureRect"]
+visible = false
+custom_minimum_size = Vector2(130, 50)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -205.5
+offset_top = -129.0
+offset_right = -70.5
+offset_bottom = -79.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("6_a4mly")
+theme_override_font_sizes/font_size = 16
+text = "VER MAIS"
+
+[node name="BackButton" type="TextureButton" parent="TextureRect/ColorRect"]
+layout_mode = 1
+offset_left = 32.0
+offset_top = 7.0
+offset_right = 97.0
+offset_bottom = 72.0
+texture_normal = ExtResource("2_hnpqu")
+texture_pressed = ExtResource("4_bo88c")
+texture_hover = ExtResource("4_bo88c")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="TextureRect/ColorRect/TextureRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TextureRect/ColorRect/BackButton" to="." method="_on_back_button_pressed"]

@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://lxt1tyw62d5r"]
+
+[ext_resource type="Script" path="res://scripts/doubts_scene.gd" id="1_rko7f"]
+[ext_resource type="Texture2D" uid="uid://jemud4nm0tgo" path="res://assets/game_background.png" id="2_nryfq"]
+[ext_resource type="Texture2D" uid="uid://d0cugosjpesnv" path="res://assets/back_icon.png" id="3_u7n7i"]
+[ext_resource type="Texture2D" uid="uid://dg78oapux5aof" path="res://assets/back_icon_pressed.png" id="4_uc7em"]
+
+[node name="DoubtsScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rko7f")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nryfq")
+expand_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.0627451)
+
+[node name="BackButton" type="TextureButton" parent="TextureRect/ColorRect"]
+layout_mode = 1
+offset_left = 28.0
+offset_top = 7.0
+offset_right = 93.0
+offset_bottom = 72.0
+texture_normal = ExtResource("3_u7n7i")
+texture_pressed = ExtResource("4_uc7em")
+texture_hover = ExtResource("4_uc7em")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="TextureRect/ColorRect/BackButton" to="." method="_on_back_button_pressed"]

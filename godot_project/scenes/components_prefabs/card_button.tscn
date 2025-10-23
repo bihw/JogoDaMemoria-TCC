@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://y50aogg0publ"]
+
+[ext_resource type="Theme" uid="uid://b73ouhd3y2th4" path="res://resources/card_button.tres" id="1_iwntl"]
+[ext_resource type="Script" path="res://scripts/card_button.gd" id="2_ekn86"]
+[ext_resource type="Theme" uid="uid://bhpmvrmlgkiwo" path="res://resources/animals_names.tres" id="3_om7dr"]
+
+[node name="CardButton" type="Button"]
+texture_filter = 2
+custom_minimum_size = Vector2(110, 145)
+offset_right = 110.0
+offset_bottom = 145.0
+theme = ExtResource("1_iwntl")
+script = ExtResource("2_ekn86")
+
+[node name="Image" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 6.0
+offset_right = -4.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = -27.0
+offset_right = 44.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_om7dr")
+horizontal_alignment = 1
+vertical_alignment = 2
+uppercase = true
+
+[node name="BackImage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://vqqyg83f3v64"]
+
+[ext_resource type="AudioStream" uid="uid://1vp4y6ljb0ed" path="res://assets/sound_effects/休暇のプロフェッショナル.mp3" id="1_munvg"]
+[ext_resource type="Script" path="res://scripts/music_player.gd" id="2_6b2o1"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_munvg")
+volume_db = 1.0
+bus = &"Background"
+script = ExtResource("2_6b2o1")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true

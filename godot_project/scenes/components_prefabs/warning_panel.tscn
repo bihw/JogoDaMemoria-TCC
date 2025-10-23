@@ -1,0 +1,117 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5608xg33d6bl"]
+
+[ext_resource type="Texture2D" uid="uid://dtjx0mwj13fhr" path="res://assets/board_warning.png" id="1_72thw"]
+[ext_resource type="Script" path="res://scripts/warning_panel.gd" id="1_ptxtk"]
+[ext_resource type="FontFile" uid="uid://cc8qug66mfmt3" path="res://fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-ExtraBold.ttf" id="2_f8cav"]
+[ext_resource type="Texture2D" uid="uid://d1k0kqq7mfln0" path="res://assets/close_icon.png" id="3_1wvok"]
+[ext_resource type="FontFile" uid="uid://d0hx6os8rjseg" path="res://fonts/AfacadFlux/static/AfacadFlux-Bold.ttf" id="5_qacdp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygcx0"]
+bg_color = Color(0, 0, 0, 0.286275)
+
+[node name="WarningPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ptxtk")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(612, 708)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ygcx0")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.5
+offset_top = -117.0
+offset_right = 195.5
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_72thw")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CloseButton" type="TextureButton" parent="Panel/TextureRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -26.0
+offset_top = 3.0
+offset_right = -1.0
+offset_bottom = 28.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_1wvok")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Panel/TextureRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_f8cav")
+theme_override_font_sizes/font_size = 21
+text = "NOME ALTERADO
+COM SUCESSO"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/TextureRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -70.5
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_f8cav")
+theme_override_font_sizes/font_size = 21
+text = "Dirija-se ao seu 
+armazenamento interno:"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Panel/TextureRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 3.5
+offset_bottom = 66.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("5_qacdp")
+theme_override_font_sizes/font_size = 22
+text = "Documents/Jogo da Memória/
+dados.csv"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Panel/TextureRect/CloseButton" to="." method="_on_close_button_pressed"]

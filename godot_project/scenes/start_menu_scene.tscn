@@ -1,0 +1,163 @@
+[gd_scene load_steps=11 format=3 uid="uid://c5r5tkokl13xp"]
+
+[ext_resource type="Script" path="res://scripts/start_scene.gd" id="1_iuepw"]
+[ext_resource type="Texture2D" uid="uid://b7v2rmqctfpje" path="res://assets/start_background.png" id="2_b3h51"]
+[ext_resource type="FontFile" uid="uid://b7sikv4hdpa3g" path="res://fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Bold.ttf" id="3_3uawd"]
+[ext_resource type="Theme" uid="uid://cvdxtujy0tn6o" path="res://resources/buttons_start.tres" id="4_m2lkw"]
+[ext_resource type="Texture2D" uid="uid://cru64ixwkvkuo" path="res://assets/statistics_icon.png" id="5_k04tj"]
+[ext_resource type="Texture2D" uid="uid://bgvr3ug0hqblm" path="res://assets/doubts_icon.png" id="6_qq3ee"]
+[ext_resource type="Texture2D" uid="uid://42onli61oapq" path="res://assets/statistics_icon_pressed.png" id="6_qxio5"]
+[ext_resource type="Texture2D" uid="uid://dflubjd1rvu2b" path="res://assets/info_icon.png" id="7_r70e3"]
+[ext_resource type="Texture2D" uid="uid://boh00ppfja55p" path="res://assets/doubts_icon_pressed.png" id="7_vwwt8"]
+[ext_resource type="Texture2D" uid="uid://cdwb86fdy7dao" path="res://assets/info_icon_pressed.png" id="8_1fekh"]
+
+[node name="StartMenuScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iuepw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_b3h51")
+expand_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 45.0
+offset_right = -54.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.0980392)
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.0
+offset_top = -220.0
+offset_right = 244.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.270588, 0.0352941, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("3_3uawd")
+theme_override_font_sizes/font_size = 38
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -52.5
+offset_right = 90.0
+offset_bottom = 182.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Start" type="Button" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(190, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("4_m2lkw")
+text = "COMEÇAR"
+
+[node name="Options" type="Button" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(190, 70)
+layout_mode = 2
+theme = ExtResource("4_m2lkw")
+text = "OPÇÕES"
+
+[node name="Quit" type="Button" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(190, 70)
+layout_mode = 2
+theme = ExtResource("4_m2lkw")
+text = "SAIR"
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control2"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -89.0
+offset_top = 20.0
+offset_right = -24.0
+offset_bottom = 238.0
+grow_horizontal = 0
+
+[node name="StatisticsButton" type="TextureButton" parent="Control2/VBoxContainer"]
+custom_minimum_size = Vector2(65, 65)
+layout_mode = 2
+texture_normal = ExtResource("5_k04tj")
+texture_pressed = ExtResource("6_qxio5")
+texture_hover = ExtResource("6_qxio5")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="DoubtsButton" type="TextureButton" parent="Control2/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(65, 65)
+layout_mode = 2
+texture_normal = ExtResource("6_qq3ee")
+texture_pressed = ExtResource("7_vwwt8")
+texture_hover = ExtResource("7_vwwt8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="InfoButton" type="TextureButton" parent="Control2/VBoxContainer"]
+custom_minimum_size = Vector2(65, 65)
+layout_mode = 2
+texture_normal = ExtResource("7_r70e3")
+texture_pressed = ExtResource("8_1fekh")
+texture_hover = ExtResource("8_1fekh")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="Control/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Control2/VBoxContainer/StatisticsButton" to="." method="_on_statistics_button_pressed"]
+[connection signal="pressed" from="Control2/VBoxContainer/DoubtsButton" to="." method="_on_doubts_button_pressed"]
+[connection signal="pressed" from="Control2/VBoxContainer/InfoButton" to="." method="_on_info_button_pressed"]

@@ -1,0 +1,265 @@
+[gd_scene load_steps=20 format=3 uid="uid://bak500ou1r81y"]
+
+[ext_resource type="Script" path="res://scripts/settings_scene.gd" id="1_wk22i"]
+[ext_resource type="Texture2D" uid="uid://jemud4nm0tgo" path="res://assets/game_background.png" id="2_4k17i"]
+[ext_resource type="Texture2D" uid="uid://ddo8330lhqajp" path="res://assets/board.png" id="3_i7dr4"]
+[ext_resource type="FontFile" uid="uid://bncexugjh0hgc" path="res://fonts/River Adventurer/River Adventurer.ttf" id="4_ewtxl"]
+[ext_resource type="FontFile" uid="uid://cc8qug66mfmt3" path="res://fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-ExtraBold.ttf" id="5_p627r"]
+[ext_resource type="FontFile" uid="uid://b7sikv4hdpa3g" path="res://fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Bold.ttf" id="5_q58a5"]
+[ext_resource type="Texture2D" uid="uid://ce3ee1do1mvwf" path="res://assets/line_edit.png" id="6_03gfk"]
+[ext_resource type="Texture2D" uid="uid://d0cugosjpesnv" path="res://assets/back_icon.png" id="6_ss7tu"]
+[ext_resource type="Texture2D" uid="uid://uph56qgennoq" path="res://assets/enter_button.png" id="7_fyvhs"]
+[ext_resource type="Texture2D" uid="uid://dg78oapux5aof" path="res://assets/back_icon_pressed.png" id="7_n43jg"]
+[ext_resource type="Texture2D" uid="uid://dqat18de4l1fx" path="res://assets/enter_button_pressed.png" id="8_o6jn3"]
+[ext_resource type="Texture2D" uid="uid://bogc72k1t4o4a" path="res://assets/checked.png" id="10_oschr"]
+[ext_resource type="Texture2D" uid="uid://dux1smk7l23c7" path="res://assets/unchecked.png" id="11_44ck7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pt737"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_57s1y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qa7j7"]
+
+[sub_resource type="Theme" id="Theme_1ydvj"]
+LineEdit/colors/font_outline_color = Color(0.190762, 0.190762, 0.190762, 1)
+LineEdit/colors/font_placeholder_color = Color(1, 1, 1, 0.6)
+LineEdit/constants/outline_size = 6
+LineEdit/font_sizes/font_size = 22
+LineEdit/fonts/font = ExtResource("5_q58a5")
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_pt737")
+LineEdit/styles/normal = SubResource("StyleBoxEmpty_57s1y")
+LineEdit/styles/read_only = SubResource("StyleBoxEmpty_qa7j7")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_10qva"]
+
+[sub_resource type="Theme" id="Theme_4spi4"]
+CheckButton/constants/outline_size = 6
+CheckButton/icons/checked = ExtResource("10_oschr")
+CheckButton/icons/unchecked = ExtResource("11_44ck7")
+CheckButton/styles/focus = SubResource("StyleBoxEmpty_10qva")
+
+[node name="SettingsScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wk22i")
+
+[node name="TextureBack" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("2_4k17i")
+expand_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.8)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -306.0
+offset_top = -354.0
+offset_right = 306.0
+offset_bottom = 354.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_i7dr4")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ColorRect/TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -209.0
+offset_top = 65.0
+offset_right = 209.0
+offset_bottom = 135.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("4_ewtxl")
+theme_override_font_sizes/font_size = 64
+text = "Opções"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 56.0
+offset_top = 151.0
+offset_right = -72.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+follow_focus = true
+scroll_vertical_custom_step = 50.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/TextureRect/ScrollContainer"]
+custom_minimum_size = Vector2(325, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="NameVBoxContainer" type="VBoxContainer" parent="ColorRect/TextureRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/TextureRect/ScrollContainer/VBoxContainer/NameVBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("5_p627r")
+theme_override_font_sizes/font_size = 22
+text = "NOME:"
+
+[node name="LEditTextureRect" type="TextureRect" parent="ColorRect/TextureRect/ScrollContainer/VBoxContainer/NameVBoxContainer"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+texture = ExtResource("6_03gfk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/TextureRect/ScrollContainer/VBoxContainer/NameVBoxContainer/LEditTextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_right = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+
+[node name="NameLineEdit" type="LineEdit" parent="ColorRect/TextureRect/ScrollContainer/VBoxContainer/NameVBoxContainer/LEditTextureRect/MarginContainer"]
+process_mode = 3
+texture_filter = 2
+custom_minimum_size = Vector2(304, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = SubResource("Theme_1ydvj")
+flat = true
+
+[node name="EnterButton" type="TextureButton" parent="ColorRect/TextureRect/ScrollContainer/VBoxContainer/NameVBoxContainer/LEditTextureRect/MarginContainer"]
+process_mode = 3
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("7_fyvhs")
+texture_pressed = ExtResource("8_o6jn3")
+texture_hover = ExtResource("8_o6jn3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MusicFlag" type="CheckButton" parent="ColorRect/TextureRect/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+mouse_filter = 1
+theme = SubResource("Theme_4spi4")
+theme_override_fonts/font = ExtResource("5_p627r")
+theme_override_font_sizes/font_size = 22
+button_pressed = true
+text = "MÚSICA DE FUNDO"
+
+[node name="VictoryMusicFlag" type="CheckButton" parent="ColorRect/TextureRect/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+mouse_filter = 1
+theme = SubResource("Theme_4spi4")
+theme_override_fonts/font = ExtResource("5_p627r")
+theme_override_font_sizes/font_size = 22
+button_pressed = true
+text = "MÚSICA DE VITÓRIA"
+
+[node name="SfxFlag" type="CheckButton" parent="ColorRect/TextureRect/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+mouse_filter = 1
+theme = SubResource("Theme_4spi4")
+theme_override_fonts/font = ExtResource("5_p627r")
+theme_override_font_sizes/font_size = 22
+button_pressed = true
+text = "EFEITOS SONOROS"
+
+[node name="TimerFlag" type="CheckButton" parent="ColorRect/TextureRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme = SubResource("Theme_4spi4")
+theme_override_fonts/font = ExtResource("5_p627r")
+theme_override_font_sizes/font_size = 22
+button_pressed = true
+text = "MOSTRAR TIMER "
+
+[node name="TipsFlag" type="CheckButton" parent="ColorRect/TextureRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme = SubResource("Theme_4spi4")
+theme_override_fonts/font = ExtResource("5_p627r")
+theme_override_font_sizes/font_size = 22
+button_pressed = true
+text = "DICAS"
+
+[node name="WarningFlag" type="CheckButton" parent="ColorRect/TextureRect/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+mouse_filter = 1
+theme = SubResource("Theme_4spi4")
+theme_override_fonts/font = ExtResource("5_p627r")
+theme_override_font_sizes/font_size = 22
+button_pressed = true
+text = "AVISO DE ERRO REPETIDO"
+
+[node name="ClicksWarningFlag" type="CheckButton" parent="ColorRect/TextureRect/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(405, 55)
+layout_mode = 2
+mouse_filter = 1
+theme = SubResource("Theme_4spi4")
+theme_override_fonts/font = ExtResource("5_p627r")
+theme_override_font_sizes/font_size = 22
+button_pressed = true
+text = "AVISO DE MUITOS CLIQUES "
+
+[node name="BackButton" type="TextureButton" parent="ColorRect"]
+layout_mode = 1
+offset_left = 32.0
+offset_top = 7.0
+offset_right = 97.0
+offset_bottom = 72.0
+texture_normal = ExtResource("6_ss7tu")
+texture_pressed = ExtResource("7_n43jg")
+texture_hover = ExtResource("7_n43jg")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="ColorRect/TextureRect/ScrollContainer/VBoxContainer/NameVBoxContainer/LEditTextureRect/MarginContainer/EnterButton" to="." method="_on_enter_button_pressed"]
+[connection signal="toggled" from="ColorRect/TextureRect/ScrollContainer/VBoxContainer/MusicFlag" to="." method="_on_music_flag_toggled"]
+[connection signal="toggled" from="ColorRect/TextureRect/ScrollContainer/VBoxContainer/VictoryMusicFlag" to="." method="_on_victory_music_flag_toggled"]
+[connection signal="toggled" from="ColorRect/TextureRect/ScrollContainer/VBoxContainer/SfxFlag" to="." method="_on_sfx_flag_toggled"]
+[connection signal="toggled" from="ColorRect/TextureRect/ScrollContainer/VBoxContainer/TimerFlag" to="." method="_on_timer_flag_toggled"]
+[connection signal="toggled" from="ColorRect/TextureRect/ScrollContainer/VBoxContainer/TipsFlag" to="." method="_on_tips_flag_toggled"]
+[connection signal="toggled" from="ColorRect/TextureRect/ScrollContainer/VBoxContainer/WarningFlag" to="." method="_on_warning_flag_toggled"]
+[connection signal="toggled" from="ColorRect/TextureRect/ScrollContainer/VBoxContainer/ClicksWarningFlag" to="." method="_on_clicks_warning_flag_toggled"]
+[connection signal="pressed" from="ColorRect/BackButton" to="." method="_on_back_button_pressed"]
