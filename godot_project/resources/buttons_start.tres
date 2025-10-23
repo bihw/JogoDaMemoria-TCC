@@ -1,0 +1,28 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://cvdxtujy0tn6o"]
+
+[ext_resource type="FontFile" uid="uid://bduujqun7rg3g" path="res://fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Black.ttf" id="1_0d4lr"]
+[ext_resource type="Texture2D" uid="uid://c60me4bpk4rut" path="res://assets/buttons_start.png" id="2_j3atn"]
+[ext_resource type="Texture2D" uid="uid://bd4vs8rymoi1m" path="res://assets/buttons_start_pressed.png" id="3_ehai6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m3m0i"]
+texture = ExtResource("3_ehai6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2pmu0"]
+texture = ExtResource("3_ehai6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cycaj"]
+texture = ExtResource("2_j3atn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_weyac"]
+texture = ExtResource("3_ehai6")
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0.333333, 0.533333, 0.227451, 1)
+Button/constants/outline_size = 7
+Button/font_sizes/font_size = 21
+Button/fonts/font = ExtResource("1_0d4lr")
+Button/styles/focus = SubResource("StyleBoxTexture_m3m0i")
+Button/styles/hover = SubResource("StyleBoxTexture_2pmu0")
+Button/styles/normal = SubResource("StyleBoxTexture_cycaj")
+Button/styles/pressed = SubResource("StyleBoxTexture_weyac")
