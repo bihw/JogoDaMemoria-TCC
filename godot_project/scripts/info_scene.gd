@@ -1,3 +1,12 @@
+# ========================================================
+# IDENTIFICAÇÃO DE AUTORIA
+# Bianca Herrmann Waskow
+# Graduanda pela Universidade Federal de Pelotas - UFPel
+# Desenvolvedora integral do aplicativo
+# CPF: 04232108076
+# E-mail: bhwaskow@gmail.com
+# ========================================================
+
 extends Control
 
 @onready var back_button: TextureButton = $TextureRect/ColorRect/BackButton
