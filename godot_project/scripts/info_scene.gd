@@ -4,7 +4,7 @@
 # Graduanda pela Universidade Federal de Pelotas - UFPel
 # Desenvolvedora integral do aplicativo
 # CPF: 04232108076
-# E-mail: bhwaskow@gmail.com
+# E-mail: bhwaskow@inf.ufpel.edu.br
 # ========================================================
 
 extends Control
